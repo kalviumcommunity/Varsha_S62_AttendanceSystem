@@ -1,9 +1,9 @@
 package com.school;
 
-public class AttendanceRecord {
+public class AttendanceRecord implements Storable {
     private int studentId;
-    private int courseId;
-    private String status;
+    int courseId;
+    String status;
 
     public AttendanceRecord(int studentId, int courseId, String status) {
         this.studentId = studentId;
@@ -31,5 +31,8 @@ public class AttendanceRecord {
 
     public void displayDetails(){
         System.out.println("Attendance Record - Student ID: " + studentId + ", in course ID: " + courseId +" "+ status);
+    }
+    public String toDataString(){
+        return studentId+","+ courseId +","+status;
     }
 }
